@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ArrowDown, Leaf } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 type PageIntroProps = {
   eyebrow: string;
@@ -30,7 +30,7 @@ export function EditorialPanel({ children, className = "" }: EditorialPanelProps
 export function LeafItem({ children }: { children: ReactNode }) {
   return (
     <li className="leaf-item">
-      <Leaf size={25} strokeWidth={1.8} aria-hidden="true" />
+      <span className="list-index" aria-hidden="true">+</span>
       <span>{children}</span>
     </li>
   );
