@@ -11,9 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as PhilosophyRouteImport } from './routes/philosophy'
+import { Route as ProblemRouteImport } from './routes/problem'
+import { Route as PurposeRouteImport } from './routes/purpose'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as FeaturesIndexRouteImport } from './routes/features.index'
+import { Route as FeaturesCapabilitiesRouteImport } from './routes/features.capabilities'
+import { Route as FeaturesSupportsRouteImport } from './routes/features.supports'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -25,14 +29,19 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FeaturesRoute = FeaturesRouteImport.update({
-  id: '/features',
-  path: '/features',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PhilosophyRoute = PhilosophyRouteImport.update({
   id: '/philosophy',
   path: '/philosophy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProblemRoute = ProblemRouteImport.update({
+  id: '/problem',
+  path: '/problem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PurposeRoute = PurposeRouteImport.update({
+  id: '/purpose',
+  path: '/purpose',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RoadmapRoute = RoadmapRouteImport.update({
@@ -40,43 +49,102 @@ const RoadmapRoute = RoadmapRouteImport.update({
   path: '/roadmap',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FeaturesIndexRoute = FeaturesIndexRouteImport.update({
+  id: '/features/',
+  path: '/features/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesCapabilitiesRoute = FeaturesCapabilitiesRouteImport.update({
+  id: '/features/capabilities',
+  path: '/features/capabilities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesSupportsRoute = FeaturesSupportsRouteImport.update({
+  id: '/features/supports',
+  path: '/features/supports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/features': typeof FeaturesRoute
   '/philosophy': typeof PhilosophyRoute
+  '/problem': typeof ProblemRoute
+  '/purpose': typeof PurposeRoute
   '/roadmap': typeof RoadmapRoute
+  '/features/capabilities': typeof FeaturesCapabilitiesRoute
+  '/features/supports': typeof FeaturesSupportsRoute
+  '/features/': typeof FeaturesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/features': typeof FeaturesRoute
   '/philosophy': typeof PhilosophyRoute
+  '/problem': typeof ProblemRoute
+  '/purpose': typeof PurposeRoute
   '/roadmap': typeof RoadmapRoute
+  '/features/capabilities': typeof FeaturesCapabilitiesRoute
+  '/features/supports': typeof FeaturesSupportsRoute
+  '/features': typeof FeaturesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/features': typeof FeaturesRoute
   '/philosophy': typeof PhilosophyRoute
+  '/problem': typeof ProblemRoute
+  '/purpose': typeof PurposeRoute
   '/roadmap': typeof RoadmapRoute
+  '/features/capabilities': typeof FeaturesCapabilitiesRoute
+  '/features/supports': typeof FeaturesSupportsRoute
+  '/features/': typeof FeaturesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/features' | '/philosophy' | '/roadmap'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/philosophy'
+    | '/problem'
+    | '/purpose'
+    | '/roadmap'
+    | '/features/capabilities'
+    | '/features/supports'
+    | '/features/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/features' | '/philosophy' | '/roadmap'
-  id: '__root__' | '/' | '/about' | '/features' | '/philosophy' | '/roadmap'
+  to:
+    | '/'
+    | '/about'
+    | '/philosophy'
+    | '/problem'
+    | '/purpose'
+    | '/roadmap'
+    | '/features/capabilities'
+    | '/features/supports'
+    | '/features'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/philosophy'
+    | '/problem'
+    | '/purpose'
+    | '/roadmap'
+    | '/features/capabilities'
+    | '/features/supports'
+    | '/features/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  FeaturesRoute: typeof FeaturesRoute
   PhilosophyRoute: typeof PhilosophyRoute
+  ProblemRoute: typeof ProblemRoute
+  PurposeRoute: typeof PurposeRoute
   RoadmapRoute: typeof RoadmapRoute
+  FeaturesCapabilitiesRoute: typeof FeaturesCapabilitiesRoute
+  FeaturesSupportsRoute: typeof FeaturesSupportsRoute
+  FeaturesIndexRoute: typeof FeaturesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -95,18 +163,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/features': {
-      id: '/features'
-      path: '/features'
-      fullPath: '/features'
-      preLoaderRoute: typeof FeaturesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/philosophy': {
       id: '/philosophy'
       path: '/philosophy'
       fullPath: '/philosophy'
       preLoaderRoute: typeof PhilosophyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/problem': {
+      id: '/problem'
+      path: '/problem'
+      fullPath: '/problem'
+      preLoaderRoute: typeof ProblemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/purpose': {
+      id: '/purpose'
+      path: '/purpose'
+      fullPath: '/purpose'
+      preLoaderRoute: typeof PurposeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/roadmap': {
@@ -116,15 +191,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RoadmapRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/features/': {
+      id: '/features/'
+      path: '/features'
+      fullPath: '/features/'
+      preLoaderRoute: typeof FeaturesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/capabilities': {
+      id: '/features/capabilities'
+      path: '/features/capabilities'
+      fullPath: '/features/capabilities'
+      preLoaderRoute: typeof FeaturesCapabilitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features/supports': {
+      id: '/features/supports'
+      path: '/features/supports'
+      fullPath: '/features/supports'
+      preLoaderRoute: typeof FeaturesSupportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  FeaturesRoute: FeaturesRoute,
   PhilosophyRoute: PhilosophyRoute,
+  ProblemRoute: ProblemRoute,
+  PurposeRoute: PurposeRoute,
   RoadmapRoute: RoadmapRoute,
+  FeaturesCapabilitiesRoute: FeaturesCapabilitiesRoute,
+  FeaturesSupportsRoute: FeaturesSupportsRoute,
+  FeaturesIndexRoute: FeaturesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
