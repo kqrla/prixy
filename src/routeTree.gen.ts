@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as PhilosophyRouteImport } from './routes/philosophy'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
 
@@ -23,11 +22,6 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FeaturesRoute = FeaturesRouteImport.update({
-  id: '/features',
-  path: '/features',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PhilosophyRoute = PhilosophyRouteImport.update({
@@ -44,14 +38,12 @@ const RoadmapRoute = RoadmapRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/features': typeof FeaturesRoute
   '/philosophy': typeof PhilosophyRoute
   '/roadmap': typeof RoadmapRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/features': typeof FeaturesRoute
   '/philosophy': typeof PhilosophyRoute
   '/roadmap': typeof RoadmapRoute
 }
@@ -59,22 +51,20 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/features': typeof FeaturesRoute
   '/philosophy': typeof PhilosophyRoute
   '/roadmap': typeof RoadmapRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/features' | '/philosophy' | '/roadmap'
+  fullPaths: '/' | '/about' | '/philosophy' | '/roadmap'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/features' | '/philosophy' | '/roadmap'
-  id: '__root__' | '/' | '/about' | '/features' | '/philosophy' | '/roadmap'
+  to: '/' | '/about' | '/philosophy' | '/roadmap'
+  id: '__root__' | '/' | '/about' | '/philosophy' | '/roadmap'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  FeaturesRoute: typeof FeaturesRoute
   PhilosophyRoute: typeof PhilosophyRoute
   RoadmapRoute: typeof RoadmapRoute
 }
@@ -93,13 +83,6 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/features': {
-      id: '/features'
-      path: '/features'
-      fullPath: '/features'
-      preLoaderRoute: typeof FeaturesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/philosophy': {
@@ -122,7 +105,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  FeaturesRoute: FeaturesRoute,
   PhilosophyRoute: PhilosophyRoute,
   RoadmapRoute: RoadmapRoute,
 }
