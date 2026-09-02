@@ -24,6 +24,14 @@ prixy returns requested details such as a decision, deadline, price, availabilit
 
 transcripts and supporting material can be retained for later inspection. collecting the source does not force the user to consume it.
 
+## account and identity handling
+
+prixy is intended to attend as you, which means signed-in sessions, switching between the account that matches the meeting, and watching more than one inbox for links and invitations.
+
+## joining paths
+
+a session can reach prixy in several ways: a link already sitting in your calendar, an invitation that arrives in an inbox beforehand, a call started live in discord or slack, a pre-registration flow on a platform such as luma, or a link dropped into a channel or forum during the session window.
+
 ## responsive public site
 
-the current build includes a responsive public site with dedicated home, about, features, philosophy, and roadmap routes.
+the current build includes a responsive public site with dedicated index, purpose, problem, philosophy, about, features, features/capabilities, features/supports, and roadmap routes. the features page is organised into capabilities, stack, and considerations sections.
