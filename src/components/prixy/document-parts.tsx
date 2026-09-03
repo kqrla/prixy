@@ -121,7 +121,10 @@ export function CellGrid({ items, columns = 3 }: { items: CellItem[]; columns?: 
               {item.marker}
             </div>
           )}
-          <div className="mb-2 text-sm font-semibold text-primary">{item.title}</div>
+          <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
+            {item.icon && <span className="text-primary opacity-80">{item.icon}</span>}
+            {item.title}
+          </div>
           <p className="text-xs leading-relaxed text-muted-foreground">{item.description}</p>
         </div>
       ))}
