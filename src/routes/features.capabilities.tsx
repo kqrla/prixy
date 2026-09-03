@@ -34,17 +34,22 @@ const beforeSession = [
   {
     title: "registration",
     description:
-      "fills in the registration form, handles confirmation steps, and stores the resulting join link.",
+      "fills in the registration form on platforms like luma or eventbrite, handles confirmation steps, and stores the resulting join link.",
+  },
+  {
+    title: "link sourcing",
+    description:
+      "finds the join url wherever it lives: calendar sync, a connected inbox, a discord or slack channel, or a forum thread watched during the event window.",
   },
   {
     title: "scheduling",
     description:
-      "resolves the correct start time across timezones and reserves the slot on your calendar.",
+      "resolves the correct start time across timezones and reserves the slot, including a configurable join delay so prixy arrives after the host opens the room.",
   },
   {
     title: "briefing",
     description:
-      "takes your goal and prepared questions as the instruction set for that specific session.",
+      "takes your goal, keywords to watch, and prepared questions as the instruction set for that specific session.",
   },
 ];
 
@@ -52,12 +57,17 @@ const duringSession = [
   {
     title: "joins as you",
     description:
-      "enters with the profile and display identity you selected for that room.",
+      "enters with the profile and display identity you selected for that room, camera off and mic off, handling waiting rooms and passcodes.",
   },
   {
     title: "goal-aware listening",
     description:
-      "tracks the session for the specific thing you asked about instead of transcribing blindly.",
+      "checks every live transcript chunk against your capture requests. keyword matches are saved immediately, with who said it, when, and the surrounding sentence.",
+  },
+  {
+    title: "chat monitoring",
+    description:
+      "watches meeting chat in real time for links, access codes, and form urls, and captures them as they appear.",
   },
   {
     title: "asks and follows up",
@@ -65,8 +75,14 @@ const duringSession = [
       "raises prepared questions at an appropriate moment and pushes once if the answer is vague.",
   },
   {
-    title: "captures live artefacts",
-    description: "collects codes, links, slides, and chat messages dropped during the call.",
+    title: "marks attendance",
+    description:
+      "sends a presence message in chat, fills out an attendance form, or follows a custom method you define.",
+  },
+  {
+    title: "handles breakout rooms",
+    description:
+      "auto-accepts breakout invites, joins a specific room you named, or stays in the main session.",
   },
 ];
 
@@ -82,9 +98,19 @@ const afterSession = [
       "if the information never surfaced, prixy says so instead of inventing a plausible answer.",
   },
   {
+    title: "diarized transcript",
+    description:
+      "the full transcript comes back with speaker labels, so you can see who said what, not just what was said.",
+  },
+  {
+    title: "hinglish readable",
+    description:
+      "when speakers mix hindi and english, the transcript stays in latin script, phonetically written, so you read it without switching scripts.",
+  },
+  {
     title: "optional source",
     description:
-      "the transcript and materials stay available for inspection and are deletable at any time.",
+      "transcripts and materials stay available for inspection and are deletable at any time.",
   },
 ];
 
