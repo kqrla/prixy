@@ -26,11 +26,15 @@ transcripts and supporting material can be retained for later inspection. collec
 
 ## account and identity handling
 
-prixy is intended to attend as you, which means signed-in sessions, switching between the account that matches the meeting, and watching more than one inbox for links and invitations.
+prixy is intended to attend as you, which means signed-in sessions, switching between the account that matches the meeting, watching more than one inbox for links and invitations, and syncing multiple calendars. camera and mic are off by default, with a configurable join delay.
 
 ## joining paths
 
-a session can reach prixy in several ways: a link already sitting in your calendar, an invitation that arrives in an inbox beforehand, a call started live in discord or slack, a pre-registration flow on a platform such as luma, or a link dropped into a channel or forum during the session window.
+a session can reach prixy in several ways: a link already sitting in your calendar, an invitation that arrives in an inbox beforehand, a call started live in discord or slack, a pre-registration or booking flow on luma, eventbrite, or calendly, or a link dropped into a channel or forum during the session window.
+
+## platform coverage
+
+meeting coverage is split into two join paths. the bot path covers zoom, google meet, microsoft teams, slack huddles, and cisco webex through a managed meeting-bot service. the browser path covers discord, bluejeans, ringcentral, and anything else with a browser join url through headless browser automation. capture logic is identical on both paths.
 
 ## responsive public site
 

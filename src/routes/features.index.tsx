@@ -34,20 +34,21 @@ export const Route = createFileRoute("/features/")({
 const capabilities = [
   {
     marker: "01",
-    title: "register",
-    description: "completes registration forms and pre-registration steps before a session opens.",
+    title: "register and attend",
+    description:
+      "completes pre-registration on luma or eventbrite, then joins the session itself, autonomously, with camera and mic off.",
   },
   {
     marker: "02",
-    title: "attend",
+    title: "listen with intent",
     description:
-      "joins supported meetings on time and handles attendance requirements where a platform enforces them.",
+      "follows the live transcript against your capture requests, not a generic summary. keyword matches are saved with context as they happen.",
   },
   {
     marker: "03",
-    title: "listen with intent",
+    title: "watch the chat",
     description:
-      "follows the session against a concrete goal rather than producing a generic transcript summary.",
+      "monitors meeting chat in real time and grabs links, access codes, and form urls the moment they are posted.",
   },
   {
     marker: "04",
@@ -57,15 +58,15 @@ const capabilities = [
   },
   {
     marker: "05",
-    title: "retrieve precisely",
+    title: "mark attendance",
     description:
-      "returns the decision, deadline, price, availability date, answer, or live promo code you asked for.",
+      "sends a chat message, fills an attendance form, or uses a custom method where a platform enforces presence.",
   },
   {
     marker: "06",
-    title: "retain the source",
+    title: "retrieve precisely",
     description:
-      "keeps transcripts and supporting material available without forcing you to read them.",
+      "returns the decision, deadline, price, availability date, answer, or live promo code you asked for, with the full diarized transcript retained as source.",
   },
 ];
 

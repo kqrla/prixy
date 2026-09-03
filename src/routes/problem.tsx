@@ -36,12 +36,12 @@ const symptoms = [
   {
     title: "the hour tax",
     description:
-      "an hour of live attendance for one figure, one date, or one confirmation you needed.",
+      "an hour of live attendance for one figure, one date, or one confirmation you needed. a webinar that overlaps with your actual work.",
   },
   {
     title: "live-only information",
     description:
-      "codes, availability, and answers announced during a session and never written down afterwards.",
+      "the office hours session where the only thing you need is one link they will paste in chat, announced live and never written down.",
   },
   {
     title: "recap overload",
@@ -56,12 +56,12 @@ const symptoms = [
   {
     title: "timezone collisions",
     description:
-      "the session that matters happens at an hour that does not work for your life.",
+      "the hackathon kickoff call at 3am your time. the session that matters happens at an hour that does not work for your life.",
   },
   {
-    title: "attention limits",
+    title: "the one-question meeting",
     description:
-      "for anyone with limited attention or executive dysfunction, a long live call is an expensive way to learn one fact.",
+      "a quarterly review where you need to ask one question during q&a, and the answer determines your roadmap.",
   },
 ];
 
@@ -74,7 +74,7 @@ const whyNow = [
   {
     title: "summaries answered the wrong question",
     description:
-      "note-taking tools ask what happened. the unmet need is what you specifically wanted from what happened.",
+      "note-taking tools assume you are in the meeting and ask what happened. they are companions. the unmet need is a proxy: what you specifically wanted from a session you were never in.",
   },
   {
     title: "delegation had no digital equivalent",
