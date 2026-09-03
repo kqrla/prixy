@@ -102,6 +102,7 @@ type CellItem = {
   title: string;
   description: string;
   marker?: string;
+  icon?: ReactNode;
 };
 
 /*
