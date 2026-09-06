@@ -15,6 +15,7 @@ import { Route as PhilosophyRouteImport } from './routes/philosophy'
 import { Route as ProblemRouteImport } from './routes/problem'
 import { Route as PurposeRouteImport } from './routes/purpose'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as SuiteRouteImport } from './routes/suite'
 import { Route as FeaturesIndexRouteImport } from './routes/features.index'
 import { Route as FeaturesCapabilitiesRouteImport } from './routes/features.capabilities'
 import { Route as FeaturesSupportsRouteImport } from './routes/features.supports'
@@ -49,6 +50,11 @@ const RoadmapRoute = RoadmapRouteImport.update({
   path: '/roadmap',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SuiteRoute = SuiteRouteImport.update({
+  id: '/suite',
+  path: '/suite',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FeaturesIndexRoute = FeaturesIndexRouteImport.update({
   id: '/features/',
   path: '/features/',
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/problem': typeof ProblemRoute
   '/purpose': typeof PurposeRoute
   '/roadmap': typeof RoadmapRoute
+  '/suite': typeof SuiteRoute
   '/features/capabilities': typeof FeaturesCapabilitiesRoute
   '/features/supports': typeof FeaturesSupportsRoute
   '/features/': typeof FeaturesIndexRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/problem': typeof ProblemRoute
   '/purpose': typeof PurposeRoute
   '/roadmap': typeof RoadmapRoute
+  '/suite': typeof SuiteRoute
   '/features/capabilities': typeof FeaturesCapabilitiesRoute
   '/features/supports': typeof FeaturesSupportsRoute
   '/features': typeof FeaturesIndexRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/problem': typeof ProblemRoute
   '/purpose': typeof PurposeRoute
   '/roadmap': typeof RoadmapRoute
+  '/suite': typeof SuiteRoute
   '/features/capabilities': typeof FeaturesCapabilitiesRoute
   '/features/supports': typeof FeaturesSupportsRoute
   '/features/': typeof FeaturesIndexRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/problem'
     | '/purpose'
     | '/roadmap'
+    | '/suite'
     | '/features/capabilities'
     | '/features/supports'
     | '/features/'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/problem'
     | '/purpose'
     | '/roadmap'
+    | '/suite'
     | '/features/capabilities'
     | '/features/supports'
     | '/features'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/problem'
     | '/purpose'
     | '/roadmap'
+    | '/suite'
     | '/features/capabilities'
     | '/features/supports'
     | '/features/'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   ProblemRoute: typeof ProblemRoute
   PurposeRoute: typeof PurposeRoute
   RoadmapRoute: typeof RoadmapRoute
+  SuiteRoute: typeof SuiteRoute
   FeaturesCapabilitiesRoute: typeof FeaturesCapabilitiesRoute
   FeaturesSupportsRoute: typeof FeaturesSupportsRoute
   FeaturesIndexRoute: typeof FeaturesIndexRoute
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RoadmapRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/suite': {
+      id: '/suite'
+      path: '/suite'
+      fullPath: '/suite'
+      preLoaderRoute: typeof SuiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/features/': {
       id: '/features/'
       path: '/features'
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProblemRoute: ProblemRoute,
   PurposeRoute: PurposeRoute,
   RoadmapRoute: RoadmapRoute,
+  SuiteRoute: SuiteRoute,
   FeaturesCapabilitiesRoute: FeaturesCapabilitiesRoute,
   FeaturesSupportsRoute: FeaturesSupportsRoute,
   FeaturesIndexRoute: FeaturesIndexRoute,
