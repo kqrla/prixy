@@ -14,6 +14,7 @@ const primaryLinks = [
   { to: "/features", label: "features" },
   { to: "/features/capabilities", label: "capabilities" },
   { to: "/features/supports", label: "supports" },
+  { to: "/suite", label: "suite" },
   { to: "/roadmap", label: "roadmap" },
 ] as const;
 
