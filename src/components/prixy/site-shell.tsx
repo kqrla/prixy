@@ -48,8 +48,9 @@ const footerLinkGroups = [
 export function SiteShell() {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const currentDocument =
-    [...primaryLinks, ...footerLinkGroups.flatMap((group) => group.links)].find(
-      (link) => link.to === pathname,
+    primaryLinks.find((link) => link.to === pathname)?.label ??
+    footerLinkGroups.map((group) => group.links.find((link) => link.to === pathname)).find(
+      (link) => link !== undefined,
     )?.label ?? pathname.replace("/", "");
 
   return (
