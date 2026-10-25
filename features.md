@@ -42,7 +42,13 @@ the current build includes a responsive public site with dedicated index, purpos
 
 ## execution notes
 
-how it runs explains the planned browser, mail, payment, voice, and video layers without connecting any providers. browserbase handles meeting joins; kernel.sh provides checkout browser sessions and vault-backed payment entry. agentmail handles meeting mail. livekit provides voice, and masky.ai is the planned video layer. cantina.com is frozen and muted for now.
+how it runs explains browser, mail, payment, voice, and video layers without connecting any providers in this preview. browserbase has a cloud asynchronous service card, with kernel.sh muted and labelled secondary. mail & contact and payment have separate service-card groups. agentmail handles meeting mail; kernel.sh vault and agentcard.ai describe the payment rails, with agentcard.sh a candidate.
+
+voice pairs an explanation of real-time audio with cards for livekit speaking and assembly.ai transcription. video pairs obs studio with masky.ai, which has been integrated via api in the product, and a frozen, muted cantina.com card beneath it. this integration status describes the product, not a live connection in the public preview.
+
+## agent family
+
+the suite lists milo, jerry, and moira in that order, all in development. milo covers memory and context, jerry is the jerryrigging agent, and moira's role has not yet been announced.
 
 ## payment and context roadmap
 

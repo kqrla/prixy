@@ -2,10 +2,10 @@
 
 ## current work
 
-- [x] move suite and roadmap to a multi-column footer with how it runs
-- [x] document browser, mail, payment, voice, and video providers without connecting them
-- [x] add payment and personal context plans to the roadmap page
-- [x] verify the footer navigation and new page
+- [ ] tighten footer page-link spacing
+- [ ] reorganize execution notes into provider cards and two-column voice and video sections
+- [ ] add moira after milo and jerry in the suite
+- [ ] verify the updated pages and footer
 
 ## short term
 

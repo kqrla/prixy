@@ -11,17 +11,17 @@ import {
 export const Route = createFileRoute("/suite")({
   head: () => ({
     meta: [
-      { title: "suite — prixy" },
+      { title: "suite | prixy" },
       {
         name: "description",
         content:
-          "prixy is the first of a small family of agents. meet the siblings in development.",
+          "prixy is part of an upcoming family of agents. meet milo, jerry, and moira, all in development.",
       },
-      { property: "og:title", content: "suite — prixy" },
+      { property: "og:title", content: "suite | prixy" },
       {
         property: "og:description",
         content:
-          "prixy is the first of a small family of agents. meet the siblings in development.",
+          "prixy is part of an upcoming family of agents. meet milo, jerry, and moira, all in development.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -69,7 +69,7 @@ function SuitePage() {
 
       <StripLabel>siblings</StripLabel>
       <CellGrid
-        columns={2}
+        columns={3}
         items={[
           {
             title: "milo",
@@ -83,6 +83,13 @@ function SuitePage() {
             description:
               "the jerryrigging agent. jerry patches together quick workflows, one-off scripts, and improvised connections between tools when there is no formal integration.",
             icon: <Wrench size={18} />,
+            marker: "in development",
+          },
+          {
+            title: "moira",
+            description:
+              "another member of the upcoming family. moira is in development, with more details to come.",
+            icon: <Bot size={18} />,
             marker: "in development",
           },
         ]}
