@@ -133,8 +133,8 @@ export function SiteShell() {
               <nav aria-label="footer navigation" className="grid grid-cols-2 sm:grid-cols-3">
                 {footerLinkGroups.map((group) => (
                   <div key={group.label} className="min-w-0 px-4 py-5">
-                    <h2 className="mb-4 text-[10px] text-primary opacity-60">{group.label}</h2>
-                    <ul className="space-y-3">
+                    <h2 className="mb-2 text-[10px] text-primary opacity-60">{group.label}</h2>
+                    <ul className="space-y-1">
                       {group.links.map((link) => (
                         <li key={link.to}>
                           <Link
