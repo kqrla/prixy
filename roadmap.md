@@ -2,10 +2,10 @@
 
 ## current work
 
-- [ ] move suite and roadmap to a multi-column footer with how it runs
-- [ ] document browser, mail, payment, voice, and video providers without connecting them
-- [ ] add payment and personal context plans to the roadmap page
-- [ ] verify the footer navigation and new page
+- [x] move suite and roadmap to a multi-column footer with how it runs
+- [x] document browser, mail, payment, voice, and video providers without connecting them
+- [x] add payment and personal context plans to the roadmap page
+- [x] verify the footer navigation and new page
 
 ## short term
 
