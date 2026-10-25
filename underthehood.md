@@ -20,6 +20,12 @@ shared prixy components live together by product domain. the site shell handles 
 
 the current site is static and has no application data flow. route components render local content and tanstack router handles navigation and metadata. a future product backend should expose session instructions and results through typed server functions while keeping platform-specific services behind small adapters.
 
+## execution documentation
+
+`/how-it-runs` is an explanatory route, not an integration layer. provider names and roadmap statements describe the intended product and do not initialize browser sessions, mail clients, cards, voice rooms, or video services. this boundary keeps the public shell portable and prevents a documentation change from requiring credentials.
+
+the site shell keeps core reading in primary navigation and groups secondary product and execution pages in the footer. all links remain native route links so direct entry and browser history work the same way.
+
 ## accessibility
 
 the site uses semantic headings, lists, navigation landmarks, and decorative elements hidden from assistive technology. layouts preserve readable line lengths and collapse into a single column on smaller screens.

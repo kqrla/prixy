@@ -55,4 +55,4 @@ the deployment target must support tanstack start's server output and web standa
 2. run `bun run build`.
 3. deploy the generated output using the host's server application workflow.
 4. configure environment variables in the host settings when backend services are added.
-5. verify `/`, `/about`, `/features`, `/philosophy`, and `/roadmap` after deployment.
+5. verify `/`, `/purpose`, `/problem`, `/about`, `/features`, `/features/capabilities`, `/features/supports`, `/philosophy`, `/suite`, `/roadmap`, and `/how-it-runs` after deployment, including the footer links.

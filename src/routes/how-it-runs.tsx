@@ -40,7 +40,7 @@ function HowItRunsPage() {
           <div className="border-b border-primary p-4 md:border-r md:border-b-0">
             <h3 className="mb-2 text-sm font-semibold">cloud asynchronous work</h3>
             <p className="text-xs leading-relaxed text-muted-foreground">
-              prixy uses browserbase or kernel.sh for cloud browser sessions that keep working while you are away. the browser handles registration, signed-in pages, and joining through a meeting link.
+              cloud asynchronous work uses browserbase and kernel.sh for browser sessions that keep working while you are away. browserbase handles meeting joins; kernel.sh provides a separate checkout browser for payment handoffs. the browser environment handles registration, signed-in pages, and meeting links.
             </p>
           </div>
           <div className="p-4">
@@ -64,7 +64,10 @@ function HowItRunsPage() {
           <div className="p-4">
             <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary"><CreditCard size={16} aria-hidden="true" />payment / vault and agentcard</h3>
             <p className="text-xs leading-relaxed text-muted-foreground">
-              the current payment direction uses kernel.sh vault with agentcard.ai or agentcard.sh for agent-assisted checkout, including paid event registration. payment execution is planned, not enabled in this preview.
+              kernel.sh vault keeps card details inside an approved checkout browser. agentcard.ai is the other documented rail, using single-use capped cards; agentcard.sh is a candidate for future support, not a built rail. neither rail has been verified against a live payment gateway, and this preview cannot make payments.
+            </p>
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+              the current payment design only proceeds when a promo code produces a clearly readable $0 checkout total. paid registration and unreadable totals remain blocked.
             </p>
           </div>
         </div>

@@ -4,6 +4,8 @@
 
 the current site has no database, authentication, file storage, background functions, or external backend dependency. all published content is stored in route source files.
 
+the providers named on `/how-it-runs` are documentation only. supabase would not replace browserbase or kernel.sh browser execution, agentcard payment rails, livekit real-time voice, or masky video rendering directly. those services require separate adapters and credentials in any future migration; agentmail similarly remains an external mail integration. there is no live provider data or session to migrate from this shell.
+
 ## service mapping
 
 | product need | current implementation | supabase equivalent |
