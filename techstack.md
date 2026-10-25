@@ -23,3 +23,9 @@ lucide provides restrained, accessible interface icons. the site uses icons only
 ## vite
 
 vite powers local development and production compilation. its fast feedback loop keeps interface work direct while still producing optimized output.
+
+## documented product providers
+
+these providers are described on the public site but are not installed or connected here. browserbase supports the meeting-browser direction, while kernel.sh supports checkout sessions and card vault entry. agentmail supplies the intended mail layer. livekit separates real-time voice from browser work, and masky.ai supplies the video direction. cantina.com is on hold. agentcard.ai is a documented card rail; agentcard.sh remains a candidate.
+
+future open-source browser environments are intended to run on an owned server, gcp, or azure. keeping these choices outside the public shell avoids turning provider documentation into a deployment dependency.

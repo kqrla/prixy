@@ -38,4 +38,12 @@ meeting coverage is split into two join paths. the bot path covers zoom, google 
 
 ## responsive public site
 
-the current build includes a responsive public site with dedicated index, purpose, problem, philosophy, about, features, features/capabilities, features/supports, and roadmap routes. the features page is organised into capabilities, stack, and considerations sections.
+the current build includes a responsive public site with dedicated index, purpose, problem, philosophy, about, features, features/capabilities, features/supports, suite, roadmap, and how-it-runs routes. the features page is organised into capabilities, stack, and considerations sections. suite, roadmap, and how it runs are grouped in a multi-column footer, separate from the primary product navigation.
+
+## execution notes
+
+how it runs explains the planned browser, mail, payment, voice, and video layers without connecting any providers. browserbase handles meeting joins; kernel.sh provides checkout browser sessions and vault-backed payment entry. agentmail handles meeting mail. livekit provides voice, and masky.ai is the planned video layer. cantina.com is frozen and muted for now.
+
+## payment and context roadmap
+
+the roadmap distinguishes designed capabilities from verified ones. kernel.sh vault and agentcard.ai are documented payment rails that still need live gateway validation; agentcard.sh is a future candidate. the documented checkout rule requires a clearly readable $0 total after a promo code and blocks nonzero or unreadable totals. shared personal context is intended to carry identity, preferences, and ongoing threads across presence surfaces, but is not complete.

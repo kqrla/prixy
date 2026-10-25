@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as HowItRunsRouteImport } from './routes/how-it-runs'
 import { Route as PhilosophyRouteImport } from './routes/philosophy'
 import { Route as ProblemRouteImport } from './routes/problem'
 import { Route as PurposeRouteImport } from './routes/purpose'
@@ -28,6 +29,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItRunsRoute = HowItRunsRouteImport.update({
+  id: '/how-it-runs',
+  path: '/how-it-runs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PhilosophyRoute = PhilosophyRouteImport.update({
@@ -74,6 +80,7 @@ const FeaturesSupportsRoute = FeaturesSupportsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/how-it-runs': typeof HowItRunsRoute
   '/philosophy': typeof PhilosophyRoute
   '/problem': typeof ProblemRoute
   '/purpose': typeof PurposeRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/how-it-runs': typeof HowItRunsRoute
   '/philosophy': typeof PhilosophyRoute
   '/problem': typeof ProblemRoute
   '/purpose': typeof PurposeRoute
@@ -99,6 +107,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/how-it-runs': typeof HowItRunsRoute
   '/philosophy': typeof PhilosophyRoute
   '/problem': typeof ProblemRoute
   '/purpose': typeof PurposeRoute
@@ -113,6 +122,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/how-it-runs'
     | '/philosophy'
     | '/problem'
     | '/purpose'
@@ -125,6 +135,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/how-it-runs'
     | '/philosophy'
     | '/problem'
     | '/purpose'
@@ -137,6 +148,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/how-it-runs'
     | '/philosophy'
     | '/problem'
     | '/purpose'
@@ -150,6 +162,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  HowItRunsRoute: typeof HowItRunsRoute
   PhilosophyRoute: typeof PhilosophyRoute
   ProblemRoute: typeof ProblemRoute
   PurposeRoute: typeof PurposeRoute
@@ -174,6 +187,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-runs': {
+      id: '/how-it-runs'
+      path: '/how-it-runs'
+      fullPath: '/how-it-runs'
+      preLoaderRoute: typeof HowItRunsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/philosophy': {
@@ -238,6 +258,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  HowItRunsRoute: HowItRunsRoute,
   PhilosophyRoute: PhilosophyRoute,
   ProblemRoute: ProblemRoute,
   PurposeRoute: PurposeRoute,

@@ -21,7 +21,7 @@ export const Route = createFileRoute("/roadmap")({
       { property: "og:title", content: "roadmap | where prixy goes next" },
       {
         property: "og:description",
-        content: "a focused path toward delegated digital presence.",
+        content: "prixy's plans for supported sessions, safe payment handoffs, and shared personal context.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -32,22 +32,27 @@ export const Route = createFileRoute("/roadmap")({
 
 const stages = [
   {
-    title: "now — supported sessions",
+    title: "now / supported sessions",
     description:
       "reliable attendance, focused listening, specific questions and concise answers across supported virtual events.",
   },
   {
-    title: "next — registration and timing",
+    title: "next / registration and timing",
     description:
       "handle more of the work before a session, including registration, reminders, timezone handling and attendance requirements.",
   },
   {
-    title: "later — personal context",
+    title: "next / payment handoffs",
     description:
-      "learn what matters to you while keeping instructions, source material and reporting under your control.",
+      "validate kernel.sh vault and agentcard.ai against live checkout gateways. the current design only proceeds with a clearly readable $0 total after a promo code; nonzero or unreadable totals stay blocked. agentcard.sh remains a candidate, not a built rail.",
   },
   {
-    title: "eventually — broader presence",
+    title: "later / shared personal context",
+    description:
+      "carry your chosen identity, preferences, and ongoing threads across meetings, voice, and video so each surface has the same personal context. this shared context is designed, not complete; instructions, source material, and reporting stay under your control.",
+  },
+  {
+    title: "eventually / broader presence",
     description:
       "extend the same delegation model to more digital spaces without turning prixy into a noisy productivity layer.",
   },
