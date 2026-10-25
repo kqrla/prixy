@@ -14,14 +14,43 @@ const primaryLinks = [
   { to: "/features", label: "features" },
   { to: "/features/capabilities", label: "capabilities" },
   { to: "/features/supports", label: "supports" },
-  { to: "/suite", label: "suite" },
-  { to: "/roadmap", label: "roadmap" },
+] as const;
+
+// secondary reading lives in the footer so the header stays focused on the product.
+const footerLinkGroups = [
+  {
+    label: "explore",
+    links: [
+      { to: "/purpose", label: "purpose" },
+      { to: "/problem", label: "problem" },
+      { to: "/philosophy", label: "philosophy" },
+      { to: "/about", label: "about" },
+    ],
+  },
+  {
+    label: "product",
+    links: [
+      { to: "/features", label: "features" },
+      { to: "/features/capabilities", label: "capabilities" },
+      { to: "/features/supports", label: "supports" },
+    ],
+  },
+  {
+    label: "behind prixy",
+    links: [
+      { to: "/how-it-runs", label: "how it runs" },
+      { to: "/suite", label: "suite" },
+      { to: "/roadmap", label: "roadmap" },
+    ],
+  },
 ] as const;
 
 export function SiteShell() {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const currentDocument =
-    primaryLinks.find((link) => link.to === pathname)?.label ?? pathname.replace("/", "");
+    [...primaryLinks, ...footerLinkGroups.flatMap((group) => group.links)].find(
+      (link) => link.to === pathname,
+    )?.label ?? pathname.replace("/", "");
 
   return (
     <div className="flex min-h-full flex-col">
@@ -30,7 +59,7 @@ export function SiteShell() {
           className="font-mono text-[9px] whitespace-nowrap text-primary uppercase tracking-[0.25em] opacity-40"
           style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
         >
-          prixy — personal presence proxy — go, listen, ask, return
+          prixy / personal presence proxy / go, listen, ask, return
         </span>
       </div>
 
@@ -87,37 +116,44 @@ export function SiteShell() {
         <div className="mx-auto max-w-5xl">
           <div className="border border-t-2 border-primary">
             <div className="border-b border-primary px-4 py-1.5">
-              <span className="text-[10px] uppercase tracking-[0.18em] text-primary opacity-60">
+              <span className="text-[10px] text-primary opacity-60">
                 concept and documentation
               </span>
             </div>
-            <div className="flex flex-col sm:flex-row">
-              <div className="flex-1 border-b border-primary px-4 py-5 sm:border-b-0 sm:border-r">
-                <div className="font-display text-2xl font-black tracking-tight text-foreground uppercase">
-                  prixy
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-[1.2fr_2fr]">
+              <div className="border-b border-primary px-4 py-5 md:border-b-0 md:border-r">
+                <Link to="/" className="font-display text-3xl font-black text-primary">prixy</Link>
                 <div className="mt-1 text-xs text-muted-foreground">personal presence proxy</div>
                 <p className="mt-3 max-w-xs text-xs leading-relaxed text-muted-foreground">
                   this is an explanatory shell, not the live product. prixy is currently in
                   development.
                 </p>
               </div>
-              <div className="flex items-center justify-center px-6 py-5">
-                <div
-                  className="flex items-center justify-center border border-primary"
-                  style={{ width: 80, height: 80, transform: "rotate(45deg)" }}
-                >
-                  <div style={{ transform: "rotate(-45deg)" }} className="text-center">
-                    <div className="text-[8px] leading-tight font-bold uppercase tracking-[0.08em] text-primary">
-                      go
-                      <br />
-                      and
-                      <br />
-                      return
-                    </div>
+              <nav aria-label="footer navigation" className="grid grid-cols-2 sm:grid-cols-3">
+                {footerLinkGroups.map((group) => (
+                  <div key={group.label} className="min-w-0 px-4 py-5">
+                    <h2 className="mb-4 text-[10px] text-primary opacity-60">{group.label}</h2>
+                    <ul className="space-y-3">
+                      {group.links.map((link) => (
+                        <li key={link.to}>
+                          <Link
+                            to={link.to}
+                            activeOptions={{ exact: true }}
+                            className="text-xs text-foreground underline-offset-4 hover:text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+                            activeProps={{ "aria-current": "page", className: "text-xs text-primary underline underline-offset-4" }}
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-              </div>
+                ))}
+              </nav>
+            </div>
+            <div className="flex flex-wrap justify-between gap-2 border-t border-primary px-4 py-2 text-[10px] text-muted-foreground">
+              <span>personal presence, on your terms.</span>
+              <span>go, listen, ask, return.</span>
             </div>
           </div>
         </div>
